@@ -1,29 +1,27 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parquímetro</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Parquímetro</h1>
     </header>
-    <div class="container">
-        <div class="content">
-            <h1>Valores</h1>
-            <p>30 minutos - R$ 1,00</p>
-            <p>60 minutos - R$ 2,00</p>
-            <p>120 minutos - R$ 3,00</p>
-        </div>
-        <div class="form">
+    <main class="container">
+        <section class="content">
+            <h2>Valores</h2>
+            <div id="valores"></div>
+        </section>
+        <section class="form">
             <input type="number" id="tempo" placeholder="Tempo de permanência">
             <input type="number" id="valor" placeholder="Valor pago em reais">
-            <button onclick="calcularParquimetro()">Calcular</button>
-        </div>
-    </div>
+            <button type="button" id="calcular">Calcular</button>
+        </section>
+    </main>
     <footer>
         <div id="resultado">
             <p id="status"></p>
