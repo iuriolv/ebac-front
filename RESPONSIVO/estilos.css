@@ -1,0 +1,444 @@
+:root {
+    --roxo: #6c3ce9;
+    --roxo-escuro: #4b25b5;
+    --texto: #24213a;
+    --texto-secundario: #706d80;
+    --fundo: #ffffff;
+    --fundo-suave: #f7f5fc;
+    --borda: #e9e5f2;
+    --raio: 1rem;
+    --largura-maxima: 75rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+    outline: 0.18rem solid var(--roxo);
+    outline-offset: 0.2rem;
+}
+
+.cabecalho {
+    width: 100%;
+    padding: 1.25rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: var(--fundo);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 0.15rem 1rem rgb(36 33 58 / 5%);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: -0.05em;
+}
+
+.logo span {
+    color: var(--roxo);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.8rem, 2vw, 2rem);
+    list-style: none;
+}
+
+.menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--roxo);
+}
+
+.hero {
+    width: min(100% - 10%, var(--largura-maxima));
+    min-height: 75vh;
+    margin: 0 auto;
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-conteudo, .hero-imagem {
+    flex: 1;
+    min-width: 0;
+}
+
+.destaque {
+    display: inline-block;
+    color: var(--roxo);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    color: var(--roxo);
+}
+
+.hero-conteudo > p {
+    max-width: 32rem;
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-imagem img, .sobre-imagem img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+.hero-imagem img {
+    aspect-ratio: 5 / 4;
+}
+
+.botao {
+    display: inline-block;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.9rem 1.6rem;
+    background: var(--roxo);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+    background: var(--roxo-escuro);
+    transform: translateY(-0.1rem);
+}
+
+.secao {
+    padding: 6rem 5%;
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background: var(--fundo-suave);
+}
+
+.sobre-imagem, .sobre-conteudo {
+    width: min(100%, 34rem);
+}
+
+.sobre-imagem img {
+    aspect-ratio: 5 / 4;
+}
+
+.sobre-conteudo h2, .secao-titulo h2, .contato-info h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.25rem;
+}
+
+.sobre-conteudo p, .contato-info > p {
+    color: var(--texto-secundario);
+    margin-bottom: 1rem;
+}
+
+.link-destaque {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--roxo);
+    font-weight: 700;
+}
+
+.servicos, .depoimentos {
+    width: min(100%, var(--largura-maxima));
+    margin: 0 auto;
+}
+
+.secao-titulo {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+}
+
+.secao-titulo > p {
+    color: var(--texto-secundario);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.servico-card {
+    padding: 2rem;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.8rem 2rem rgb(36 33 58 / 8%);
+}
+
+.icone {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    aspect-ratio: 1;
+    border-radius: 0.8rem;
+    background: #eee7ff;
+    color: var(--roxo);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.servico-card h3, .depoimento-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.servico-card p, .depoimento-card > p {
+    color: var(--texto-secundario);
+}
+
+.depoimentos {
+    max-width: none;
+    background: var(--fundo-suave);
+}
+
+.depoimentos .secao-titulo, .depoimentos-grid {
+    width: min(100%, var(--largura-maxima));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.depoimento-card {
+    padding: 2rem;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+
+.estrelas {
+    color: #e6a817;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+}
+
+.depoimento-card blockquote {
+    margin-bottom: 1.5rem;
+    color: var(--texto-secundario);
+}
+
+.contato {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+    width: min(100%, var(--largura-maxima));
+    margin: 0 auto;
+}
+
+.contato-info address {
+    margin-top: 2rem;
+    font-style: normal;
+    overflow-wrap: anywhere;
+}
+
+.contato-info address p {
+    margin-bottom: 0.8rem;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.contato-form label {
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.contato-form input, .contato-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--borda);
+    border-radius: 0.5rem;
+    background: var(--fundo-suave);
+    color: var(--texto);
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.contato-form input:focus, .contato-form textarea:focus {
+    border-color: var(--roxo);
+    outline: 0.1rem solid var(--roxo);
+}
+
+.contato-form .botao {
+    align-self: flex-start;
+    margin-top: 0.8rem;
+}
+
+.rodape {
+    padding: 2rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: var(--texto);
+    color: white;
+}
+
+.rodape p {
+    color: #d4d0e0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 60rem) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu {
+        flex-wrap: wrap;
+    }
+    .hero {
+        gap: 2rem;
+        min-height: auto;
+    }
+    .sobre {
+        gap: 2.5rem;
+    }
+    .depoimentos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .contato {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .cabecalho {
+        position: static;
+        padding: 1.25rem 5%;
+        gap: 1rem;
+    }
+    .menu {
+        gap: 0.5rem 1rem;
+    }
+    .menu a {
+        font-size: 0.85rem;
+    }
+    .hero {
+        width: 90%;
+        padding: 3.5rem 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+    }
+    .hero h1 {
+        font-size: clamp(2.3rem, 10vw, 3.3rem);
+    }
+    .secao {
+        padding: 4rem 5%;
+    }
+    .sobre {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .servicos-grid,
+    .depoimentos-grid,
+    .contato {
+        grid-template-columns: 1fr;
+    }
+    .servico-card,
+    .depoimento-card {
+        padding: 1.5rem;
+    }
+    .rodape {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
