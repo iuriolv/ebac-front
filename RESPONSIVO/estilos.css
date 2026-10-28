@@ -67,18 +67,18 @@ button, a {
     box-shadow: 0 0.15rem 1rem rgb(36 33 58 / 5%);
 }
 
-.logo {
+.cabecalho__logo {
     font-size: 1.5rem;
     font-weight: 800;
     white-space: nowrap;
     letter-spacing: -0.05em;
 }
 
-.logo span {
+.cabecalho__logo span {
     color: var(--roxo);
 }
 
-.menu {
+.cabecalho__menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,17 +86,17 @@ button, a {
     list-style: none;
 }
 
-.menu a {
+.cabecalho__menu a {
     font-size: 0.95rem;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
-.menu a:hover {
+.cabecalho__menu a:hover {
     color: var(--roxo);
 }
 
-.hero {
+.inicio {
     width: min(100% - 10%, var(--largura-maxima));
     min-height: 75vh;
     margin: 0 auto;
@@ -107,12 +107,12 @@ button, a {
     gap: 4rem;
 }
 
-.hero-conteudo, .hero-imagem {
+.inicio__conteudo, .inicio__imagem {
     flex: 1;
     min-width: 0;
 }
 
-.destaque {
+.texto-destaque {
     display: inline-block;
     color: var(--roxo);
     font-size: 0.8rem;
@@ -121,31 +121,31 @@ button, a {
     margin-bottom: 1rem;
 }
 
-.hero h1 {
+.inicio__titulo {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     line-height: 1.12;
     letter-spacing: -0.05em;
     margin-bottom: 1.5rem;
 }
 
-.hero h1 span {
+.inicio__titulo--destaque {
     color: var(--roxo);
 }
 
-.hero-conteudo > p {
+.inicio__descricao {
     max-width: 32rem;
     color: var(--texto-secundario);
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
-.hero-imagem img, .sobre-imagem img {
+.inicio__imagem img, .sobre__imagem img {
     width: 100%;
     object-fit: cover;
     border-radius: var(--raio);
 }
 
-.hero-imagem img {
+.inicio__imagem img {
     aspect-ratio: 5 / 4;
 }
 
@@ -178,27 +178,27 @@ button, a {
     background: var(--fundo-suave);
 }
 
-.sobre-imagem, .sobre-conteudo {
+.sobre__imagem, .sobre__conteudo {
     width: min(100%, 34rem);
 }
 
-.sobre-imagem img {
+.sobre__imagem img {
     aspect-ratio: 5 / 4;
 }
 
-.sobre-conteudo h2, .secao-titulo h2, .contato-info h2 {
+.sobre__titulo, .secao__titulo h2, .contato__titulo {
     font-size: clamp(2rem, 3.5vw, 3rem);
     line-height: 1.2;
     letter-spacing: -0.04em;
     margin-bottom: 1.25rem;
 }
 
-.sobre-conteudo p, .contato-info > p {
+.sobre__texto, .contato__descricao {
     color: var(--texto-secundario);
     margin-bottom: 1rem;
 }
 
-.link-destaque {
+.sobre__link {
     display: inline-block;
     margin-top: 1rem;
     color: var(--roxo);
@@ -210,23 +210,23 @@ button, a {
     margin: 0 auto;
 }
 
-.secao-titulo {
+.secao__titulo {
     text-align: center;
     max-width: 42rem;
     margin: 0 auto 3rem;
 }
 
-.secao-titulo > p {
+.secao__titulo > p {
     color: var(--texto-secundario);
 }
 
-.servicos-grid {
+.servicos__lista {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
-.servico-card {
+.servico {
     padding: 2rem;
     border: 1px solid var(--borda);
     border-radius: var(--raio);
@@ -234,12 +234,12 @@ button, a {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.servico-card:hover {
+.servico:hover {
     transform: translateY(-0.3rem);
     box-shadow: 0 0.8rem 2rem rgb(36 33 58 / 8%);
 }
 
-.icone {
+.servico__icone {
     display: grid;
     place-items: center;
     width: 3.5rem;
@@ -251,12 +251,12 @@ button, a {
     margin-bottom: 1.5rem;
 }
 
-.servico-card h3, .depoimento-card h3 {
+.servico__titulo, .depoimento__nome {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
-.servico-card p, .depoimento-card > p {
+.servico__descricao, .depoimento__cargo {
     color: var(--texto-secundario);
 }
 
@@ -265,32 +265,32 @@ button, a {
     background: var(--fundo-suave);
 }
 
-.depoimentos .secao-titulo, .depoimentos-grid {
+.depoimentos .secao__titulo, .depoimentos__lista {
     width: min(100%, var(--largura-maxima));
     margin-left: auto;
     margin-right: auto;
 }
 
-.depoimentos-grid {
+.depoimentos__lista {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
-.depoimento-card {
+.depoimento {
     padding: 2rem;
     background: white;
     border: 1px solid var(--borda);
     border-radius: var(--raio);
 }
 
-.estrelas {
+.depoimento__estrelas {
     color: #e6a817;
     letter-spacing: 0.15em;
     margin-bottom: 1rem;
 }
 
-.depoimento-card blockquote {
+.depoimento__texto {
     margin-bottom: 1.5rem;
     color: var(--texto-secundario);
 }
@@ -303,28 +303,28 @@ button, a {
     margin: 0 auto;
 }
 
-.contato-info address {
+.contato__informacoes address {
     margin-top: 2rem;
     font-style: normal;
     overflow-wrap: anywhere;
 }
 
-.contato-info address p {
+.contato__informacoes address p {
     margin-bottom: 0.8rem;
 }
 
-.contato-form {
+.contato__formulario {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-.contato-form label {
+.contato__label {
     font-weight: 700;
     margin-top: 0.5rem;
 }
 
-.contato-form input, .contato-form textarea {
+.contato__campo {
     width: 100%;
     padding: 0.9rem 1rem;
     border: 1px solid var(--borda);
@@ -333,17 +333,17 @@ button, a {
     color: var(--texto);
 }
 
-.contato-form textarea {
+.contato__campo--mensagem {
     resize: vertical;
     min-height: 8rem;
 }
 
-.contato-form input:focus, .contato-form textarea:focus {
+.contato__campo:focus {
     border-color: var(--roxo);
     outline: 0.1rem solid var(--roxo);
 }
 
-.contato-form .botao {
+.contato__botao {
     align-self: flex-start;
     margin-top: 0.8rem;
 }
@@ -359,7 +359,7 @@ button, a {
     color: white;
 }
 
-.rodape p {
+.rodape__texto {
     color: #d4d0e0;
     font-size: 0.9rem;
 }
@@ -369,17 +369,17 @@ button, a {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .menu {
+    .cabecalho__menu {
         flex-wrap: wrap;
     }
-    .hero {
+    .inicio {
         gap: 2rem;
         min-height: auto;
     }
     .sobre {
         gap: 2.5rem;
     }
-    .depoimentos-grid {
+    .depoimentos__lista {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .contato {
@@ -393,20 +393,20 @@ button, a {
         padding: 1.25rem 5%;
         gap: 1rem;
     }
-    .menu {
+    .cabecalho__menu {
         gap: 0.5rem 1rem;
     }
-    .menu a {
+    .cabecalho__menu a {
         font-size: 0.85rem;
     }
-    .hero {
+    .inicio {
         width: 90%;
         padding: 3.5rem 0;
         flex-direction: column;
         align-items: stretch;
         gap: 2.5rem;
     }
-    .hero h1 {
+    .inicio__titulo {
         font-size: clamp(2.3rem, 10vw, 3.3rem);
     }
     .secao {
@@ -416,13 +416,13 @@ button, a {
         flex-direction: column;
         gap: 2rem;
     }
-    .servicos-grid,
-    .depoimentos-grid,
+    .servicos__lista,
+    .depoimentos__lista,
     .contato {
         grid-template-columns: 1fr;
     }
-    .servico-card,
-    .depoimento-card {
+    .servico,
+    .depoimento {
         padding: 1.5rem;
     }
     .rodape {
