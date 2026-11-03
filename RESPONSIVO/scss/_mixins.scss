@@ -1,0 +1,28 @@
+@use 'variaveis' as v;
+
+@mixin botao-padrao {
+    display: inline-block;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.9rem 1.6rem;
+    background: v.$roxo;
+    color: v.$branco;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        background: v.$roxo-escuro;
+        transform: translateY(-0.1rem);
+    }
+}
+
+@mixin espacamento-secao($vertical: 6rem, $horizontal: 5%) {
+    padding: $vertical $horizontal;
+}
+
+@mixin container($largura: v.$largura-maxima) {
+    width: min(100%, $largura);
+    margin-left: auto;
+    margin-right: auto;
+}

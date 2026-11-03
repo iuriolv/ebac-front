@@ -1,0 +1,339 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+.cabecalho {
+    width: 100%;
+    padding: 1.25rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$espacamento;
+    background: v.$fundo;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 0.15rem 1rem rgb(36 33 58 / 5%);
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        white-space: nowrap;
+        letter-spacing: -0.05em;
+
+        span {
+            color: v.$roxo;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(0.8rem, 2vw, 2rem);
+        list-style: none;
+
+        a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: v.$roxo;
+            }
+        }
+    }
+}
+
+.inicio {
+    width: min(100% - 10%, v.$largura-maxima);
+    min-height: 75vh;
+    margin: 0 auto;
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$espacamento-grande;
+
+    &__conteudo, &__imagem {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__titulo {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.12;
+        letter-spacing: -0.05em;
+        margin-bottom: 1.5rem;
+
+        &--destaque {
+            color: v.$roxo;
+        }
+    }
+
+    &__descricao {
+        max-width: 32rem;
+        color: v.$texto-secundario;
+        font-size: 1.1rem;
+        margin-bottom: v.$espacamento;
+    }
+
+    &__imagem img {
+        width: 100%;
+        aspect-ratio: 5 / 4;
+        object-fit: cover;
+        border-radius: v.$raio;
+    }
+}
+
+.secao {
+    @include m.espacamento-secao;
+
+    &__titulo {
+        text-align: center;
+        max-width: 42rem;
+        margin: 0 auto 3rem;
+
+        h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.25rem;
+        }
+
+        > p {
+            color: v.$texto-secundario;
+        }
+    }
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: v.$espacamento-grande;
+    background: v.$fundo-suave;
+
+    &__imagem, &__conteudo {
+        width: min(100%, 34rem);
+    }
+
+    &__imagem img {
+        width: 100%;
+        aspect-ratio: 5 / 4;
+        object-fit: cover;
+        border-radius: v.$raio;
+    }
+
+    &__titulo {
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+        margin-bottom: 1.25rem;
+    }
+
+    &__texto {
+        color: v.$texto-secundario;
+        margin-bottom: v.$espacamento-pequeno;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: v.$espacamento-pequeno;
+        color: v.$roxo;
+        font-weight: 700;
+    }
+}
+
+.servicos {
+    @include m.container;
+}
+
+.servicos__lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.depoimentos {
+    max-width: none;
+    background: v.$fundo-suave;
+
+    &__lista {
+        @include m.container;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .secao__titulo {
+        @include m.container;
+        margin-bottom: 3rem;
+    }
+}
+
+.contato {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: v.$espacamento-grande;
+    @include m.container;
+
+    &__titulo {
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+        margin-bottom: 1.25rem;
+    }
+
+    &__descricao {
+        color: v.$texto-secundario;
+        margin-bottom: v.$espacamento-pequeno;
+    }
+
+    &__informacoes {
+        address {
+            margin-top: v.$espacamento;
+            font-style: normal;
+            overflow-wrap: anywhere;
+
+            p {
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+
+    &__formulario {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    &__label {
+        font-weight: 700;
+        margin-top: 0.5rem;
+    }
+
+    &__campo {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid v.$borda;
+        border-radius: 0.5rem;
+        background: v.$fundo-suave;
+        color: v.$texto;
+
+        &:focus {
+            border-color: v.$roxo;
+            outline: 0.1rem solid v.$roxo;
+        }
+
+        &--mensagem {
+            resize: vertical;
+            min-height: 8rem;
+        }
+    }
+
+    &__botao {
+        align-self: flex-start;
+        margin-top: 0.8rem;
+    }
+}
+
+.rodape {
+    padding: v.$espacamento 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: v.$espacamento-pequeno;
+    background: v.$texto;
+    color: v.$branco;
+
+    &__texto {
+        color: #d4d0e0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: v.$tablet) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cabecalho__menu {
+        flex-wrap: wrap;
+    }
+
+    .inicio {
+        gap: v.$espacamento;
+        min-height: auto;
+    }
+
+    .sobre {
+        gap: 2.5rem;
+    }
+
+    .depoimentos__lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contato {
+        gap: v.$espacamento;
+    }
+}
+
+@media (max-width: v.$mobile) {
+    .cabecalho {
+        position: static;
+        padding: 1.25rem 5%;
+        gap: v.$espacamento-pequeno;
+
+        &__menu {
+            gap: 0.5rem 1rem;
+
+            a {
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    .inicio {
+        width: 90%;
+        padding: 3.5rem 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+
+        &__titulo {
+            font-size: clamp(2.3rem, 10vw, 3.3rem);
+        }
+    }
+
+    .secao {
+        @include m.espacamento-secao(4rem, 5%);
+    }
+
+    .sobre {
+        flex-direction: column;
+        gap: v.$espacamento;
+    }
+
+    .servicos__lista, .depoimentos__lista, .contato {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

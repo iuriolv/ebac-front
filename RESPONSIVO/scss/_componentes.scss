@@ -1,0 +1,88 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+.texto-destaque {
+    display: inline-block;
+    color: v.$roxo;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: v.$espacamento-pequeno;
+}
+
+.botao {
+    @include m.botao-padrao;
+}
+
+.servico {
+    padding: v.$espacamento;
+    border: 1px solid v.$borda;
+    border-radius: v.$raio;
+    background: v.$branco;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.8rem 2rem rgb(36 33 58 / 8%);
+    }
+
+    &__icone {
+        display: grid;
+        place-items: center;
+        width: 3.5rem;
+        aspect-ratio: 1;
+        border-radius: 0.8rem;
+        background: v.$icone-fundo;
+        color: v.$roxo;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__titulo {
+        font-size: 1.2rem;
+        margin-bottom: calc(v.$espacamento-pequeno / 2);
+    }
+
+    &__descricao {
+        color: v.$texto-secundario;
+    }
+}
+
+.depoimento {
+    padding: v.$espacamento;
+    background: v.$branco;
+    border: 1px solid v.$borda;
+    border-radius: v.$raio;
+
+    &__estrelas {
+        color: v.$estrela;
+        letter-spacing: 0.15em;
+        margin-bottom: v.$espacamento-pequeno;
+    }
+
+    &__texto {
+        margin-bottom: 1.5rem;
+        color: v.$texto-secundario;
+    }
+
+    &__nome {
+        font-size: 1.2rem;
+        margin-bottom: calc(v.$espacamento-pequeno / 2);
+    }
+
+    &__cargo {
+        color: v.$texto-secundario;
+    }
+}
+
+.contato__botao {
+    @include m.botao-padrao;
+    align-self: flex-start;
+    margin-top: 0.8rem;
+}
+
+@media (max-width: v.$mobile) {
+    .servico, .depoimento {
+        padding: 1.5rem;
+    }
+}
