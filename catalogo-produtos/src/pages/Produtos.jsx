@@ -8,6 +8,7 @@ function Produtos() {
     const [nome, setNome] = useState('');
     const [preco, setPreco] = useState('');
     const [descricao, setDescricao] = useState('');
+    const [imagem, setImagem] = useState('');
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -17,21 +18,21 @@ function Produtos() {
                     nome: 'Notebook',
                     preco: 3500,
                     imagem: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
-                    descricao: 'Notebook para trabalho e estudos.'
+                    descricao: 'Notebook para trabalho e estudos'
                 },
                 {
                     id: 2,
                     nome: 'Smartphone',
                     preco: 1800,
                     imagem: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
-                    descricao: 'Smartphone moderno e eficiente.'
+                    descricao: 'Smartphone moderno e eficiente'
                 },
                 {
                     id: 3,
                     nome: 'Fone de Ouvido',
                     preco: 250,
                     imagem: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
-                    descricao: 'Fone de ouvido com ótima qualidade de som.'
+                    descricao: 'Fone de ouvido com ótima qualidade de som'
                 }
             ];
 
@@ -49,7 +50,7 @@ function Produtos() {
             id: Date.now(),
             nome,
             preco: Number(preco),
-            imagem: 'https://placehold.co/400x250?text=Novo+Produto',
+            imagem,
             descricao
         };
 
@@ -61,6 +62,7 @@ function Produtos() {
         setNome('');
         setPreco('');
         setDescricao('');
+        setImagem('');
     }
 
     return (
@@ -103,6 +105,17 @@ function Produtos() {
                             value={descricao}
                             onChange={(event) => setDescricao(event.target.value)}
                             placeholder="Descreva o produto"
+                            required
+                        />
+                    </div>
+                    <div className="campo">
+                        <label htmlFor="imagem">URL da imagem:</label>
+                        <input
+                            type="url"
+                            id="imagem"
+                            value={imagem}
+                            onChange={(event) => setImagem(event.target.value)}
+                            placeholder="https://exemplo.com/imagem.jpg"
                             required
                         />
                     </div>

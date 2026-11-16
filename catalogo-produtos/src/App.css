@@ -29,8 +29,7 @@
     margin-bottom: 50px;
 }
 
-.formulario h2,
-.listagem h2 {
+.formulario h2, .listagem h2 {
     color: var(--cor-secundaria);
     font-size: 1.5rem;
     margin-bottom: 25px;
@@ -48,8 +47,7 @@
     color: var(--cor-secundaria);
 }
 
-.campo input,
-.campo textarea {
+.campo input, .campo textarea {
     width: 100%;
     padding: 13px;
     background-color: #101010;
@@ -60,13 +58,25 @@
     transition: border-color 0.2s;
 }
 
-.campo input:focus,
-.campo textarea:focus {
+.campo input[type="url"] {
+    width: 100%;
+    padding: 13px;
+    background-color: #101010;
+    color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 7px;
+    outline: none;
+}
+
+.campo input[type="url"]:focus {
+    border-color: #c8ff00;
+}
+
+.campo input:focus, .campo textarea:focus {
     border-color: var(--cor-destaque);
 }
 
-.campo input::placeholder,
-.campo textarea::placeholder {
+.campo input::placeholder, .campo textarea::placeholder {
     color: #777777;
 }
 
