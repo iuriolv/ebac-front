@@ -1,0 +1,39 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #101010;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --cor-principal: #101010;
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #c8ff00;
+    --cor-texto-secundario: #a3a3a3;
+    --cor-superficie: #1c1c1c;
+    --cor-borda: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
